@@ -16,6 +16,8 @@
  *
  * @uses school_theme_header_style()
  */
+
+//  random comment
 function school_theme_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
