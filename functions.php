@@ -48,7 +48,7 @@ function school_theme_setup()
 	add_theme_support('post-thumbnails');
 
 
-	add_image_size('portrait-blog', 200, 250, true);
+	add_image_size('portrait-blog', 1920, 1080, true);
 
 
 	// This theme uses wp_nav_menu() in one location.
