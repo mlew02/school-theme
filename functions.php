@@ -161,10 +161,20 @@ add_action('wp_enqueue_scripts', 'school_theme_scripts');
 function enqueue_aos_files_for_posts() {
     if (is_singular('post')) {
         // Enqueue AOS CSS
-        wp_enqueue_style('aos-css', get_template_directory_uri() . '/assets/css/aos.css', array(), '3.0.0');
+        wp_enqueue_style(
+			'aos-css', 
+			get_template_directory_uri() . '/css/aos.css', 
+			array(), 
+			// '3.0.0'
+		);
 
         // Enqueue AOS JS
-        wp_enqueue_script('aos-js', get_template_directory_uri() . '/assets/js/aos.js', array('jquery'), '3.0.0', true);
+        wp_enqueue_script(
+			'aos-js', 
+			get_template_directory_uri() . '/js/aos.js', 
+			array(), 
+			// '3.0.0', 
+			true);
 
         // Initialize AOS
         add_action('wp_footer', 'initialize_aos');
@@ -203,6 +213,8 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
 require get_template_directory() . '/inc/customizer.php';
 
 /**
@@ -212,3 +224,14 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function fwd_post_filter( $use_block_editor, $post ) {
+    // Add IDs to the array
+    $page_ids = array( 18 );
+    if ( in_array( $post->ID, $page_ids ) ) {
+        return false;
+    } else {
+        return $use_block_editor;
+    }
+}
+add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
