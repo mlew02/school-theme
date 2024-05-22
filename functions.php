@@ -158,42 +158,17 @@ function school_theme_scripts()
 
 add_action('wp_enqueue_scripts', 'school_theme_scripts');
 
-function enqueue_aos_files_for_posts() {
-    if (is_singular('post')) {
-        // Enqueue AOS CSS
-        wp_enqueue_style(
-			'aos-css', 
-			get_template_directory_uri() . '/css/aos.css', 
-			array(), 
-			// '3.0.0'
-		);
+function enqueue_aos_scripts() {
+    // Enqueue AOS CSS
+    wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
 
-        // Enqueue AOS JS
-        wp_enqueue_script(
-			'aos-js', 
-			get_template_directory_uri() . '/js/aos.js', 
-			array(), 
-			// '3.0.0', 
-			true);
+    // Enqueue AOS JavaScript
+    wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
 
-        // Initialize AOS
-        add_action('wp_footer', 'initialize_aos');
-    }
+    // Initialize AOS
+    wp_add_inline_script('aos-js', 'AOS.init();');
 }
-add_action('wp_enqueue_scripts', 'enqueue_aos_files_for_posts');
-
-function initialize_aos() {
-    if (is_singular('post')) {
-        echo '<script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    AOS.init({
-                        duration: 1500,
-                        easing: "linear"
-                    });
-                });
-              </script>';
-    }
-}
+add_action('wp_enqueue_scripts', 'enqueue_aos_scripts');
 
 /**
  * Implement the Custom Header feature.
