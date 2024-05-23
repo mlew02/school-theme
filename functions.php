@@ -50,6 +50,8 @@ function school_theme_setup()
 
 	add_image_size('portrait-blog', 1920, 1080, true);
 
+	add_image_size('portrait-student', 300, 200, true);
+
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
