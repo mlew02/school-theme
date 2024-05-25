@@ -23,6 +23,12 @@
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://mlewebs.ca/school/">Matthew NIna</a>' );
+				wp_nav_menu(
+					array(
+						'theme_location' => 'footer-menu',
+						'menu_id'        => 'footer-menu',
+					)
+				)
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
