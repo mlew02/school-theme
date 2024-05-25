@@ -173,14 +173,16 @@ function school_theme_scripts()
 add_action('wp_enqueue_scripts', 'school_theme_scripts');
 
 function enqueue_aos_scripts() {
-    // Enqueue AOS CSS
-    wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
+    
+	// Enqueue AOS CSS
+	wp_enqueue_style('aos-css', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), '2.3.1');
 
-    // Enqueue AOS JavaScript
-    wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
+	// Enqueue AOS JavaScript
+	wp_enqueue_script('aos-js', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), '2.3.1', true);
 
-    // Initialize AOS
-    wp_add_inline_script('aos-js', 'AOS.init();');
+	// Initialize AOS
+	wp_add_inline_script('aos-js', 'AOS.init();');
+    
 }
 add_action('wp_enqueue_scripts', 'enqueue_aos_scripts');
 

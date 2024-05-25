@@ -64,13 +64,6 @@ get_header();
     endwhile; // End of the loop.
     ?>
 
-    <div class="test-aos" data-aos="fade-up">
-        <h2>Test AOS</h2>
-        <p>
-            This should fade when the page loads. If it doesn't, then check functions.php to make sure that AOS is properly enqueued. Or maybe you missed it, in which case reload the page.
-        </p>
-    </div>
-
 </main><!-- #main -->
 
 <?php
