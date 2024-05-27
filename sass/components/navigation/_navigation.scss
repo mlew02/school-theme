@@ -25,12 +25,12 @@
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
-					left: auto;
+					// left: auto;
 				}
 			}
 
 			a {
-				width: 200px;
+				// width: 200px;
 			}
 
 			:hover > a,
@@ -39,6 +39,7 @@
 
 			a:hover,
 			a.focus {
+				
 			}
 		}
 
@@ -50,10 +51,12 @@
 	}
 
 	li {
-		position: relative;
+		// position: relative;
 
 		&:hover > a,
 		&.focus > a {
+			background-color: #305c9f;
+			color: #fff;
 		}
 	}
 
@@ -67,7 +70,7 @@
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
 		background-color: #305c9f;
-		padding: 0 1rem;
+		padding: 1rem;
 	}
 }
 
@@ -82,7 +85,7 @@
 }
 
 .site-header .site-title {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     text-transform: uppercase;
 	margin: 0.5rem 1rem;
 	a {
@@ -149,11 +152,14 @@
 		display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
-		position: absolute;
-		top: 1rem;
 		a {
 			color: #fff;
-			padding: 0 1rem;
+			background-color: black;
+			padding: 1rem;
+		}
+		ul {
+			display: flex;
+			box-shadow: none;
 		}
 	}
 }
