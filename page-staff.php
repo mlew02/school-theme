@@ -17,10 +17,8 @@ get_header();
 	endwhile; // End of the loop.
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
-			<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-		</header><!-- .entry-header -->
-
+	
+		<div class="page">
 		<div class="entry-content">
 
 
@@ -98,7 +96,8 @@ get_header();
 	</article><!-- #post-<?php the_ID(); ?> -->
 
 </main><!-- #primary -->
+</div
 <?php
-get_sidebar();
+
 get_footer();
 ?>
