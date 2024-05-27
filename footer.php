@@ -13,24 +13,14 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'school-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'school-theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'school-theme' ), 'school-theme', '<a href="https://mlewebs.ca/school/">Matthew NIna</a>' );
-
-				// display logo in footer
-				if (has_custom_logo()) : ?>
-					<div class="footer-logo">
-						<a href="<?php echo esc_url(home_url('/')); ?>">
-							<?php the_custom_logo(); ?>
-						</a>
-					</div>
+			<?php
+			if (has_custom_logo()) : ?>
+				<div class="footer-logo">
+					<a href="<?php echo esc_url(home_url('/')); ?>">
+						<?php the_custom_logo(); ?>
+					</a>
+				</div>
+				
 				<?php endif; ?>
 
 				<section class="footer-credits">
