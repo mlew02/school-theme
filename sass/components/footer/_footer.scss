@@ -1,11 +1,17 @@
 .site-footer {
-    grid-area: footer;
+    display: flex;
+    justify-content: center;
 	background-color: #333;
     margin-top: 20px;
     padding: 1rem;
     font-size: .875rem;
     color: #fff;
     text-align: center;
+
+    .site-info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .footer-credits p {
