@@ -7,7 +7,12 @@
             color: #305B9E;
             text-decoration: none;
             font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
+
     }
 
     @media screen and (min-width: 31.25em){
@@ -34,6 +39,9 @@
             color: #305B9E;
             text-decoration: none;
             font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         .wp-block-button__link {
@@ -62,6 +70,32 @@
             display: grid;
             grid-template-columns: 300px 1fr;
             grid-gap: 1rem;
+        }
+    }
+
+}
+
+// single fwd-student page
+.single-fwd-student {
+    .site-main {
+        padding: 0 2rem 1rem;
+        max-width: 800px;
+        a {
+            &:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .related-students {
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                color: #305B9E;
+            }
         }
     }
 
