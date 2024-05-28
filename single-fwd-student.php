@@ -8,28 +8,6 @@
  */
 
 get_header();
-?>
-
-<main id="primary" class="site-main">
-
-    <?php
-    while (have_posts()) :
-        the_post();
-
-        // Display the single post content
-        get_template_part('template-parts/content', get_post_type());
-
-        // Display related students
-        school_theme_display_related_students();
-
-    endwhile; // End of the loop.
-    ?>
-
-</main><!-- #main -->
-
-<?php
-get_footer();
-
 // Function to display related students
 function school_theme_display_related_students() {
 
@@ -81,4 +59,27 @@ function school_theme_display_related_students() {
 		}
 	}
 }
+
 ?>
+
+<main id="primary" class="site-main">
+
+    <?php
+    while (have_posts()) :
+        the_post();
+
+        // Display the single post content
+        get_template_part('template-parts/content', get_post_type());
+
+        // Display related students
+        school_theme_display_related_students();
+
+    endwhile; // End of the loop.
+    ?>
+
+</main><!-- #main -->
+
+<?php
+get_footer();
+
+

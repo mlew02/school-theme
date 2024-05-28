@@ -8,10 +8,6 @@
     color: #fff;
     text-align: center;
 
-    .site-info {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
 }
 
 .footer-credits p {
@@ -31,6 +27,15 @@
             color: #fff;
             text-decoration: none;
             font-weight: 700;
+        }
+    }
+}
+
+@media screen and (min-width: 50em){
+    .site-footer {
+        .site-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 }

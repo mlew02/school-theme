@@ -1,0 +1,44 @@
+// fwd-student archive page
+.post-type-archive-fwd-student {
+    article {
+        max-width: 320px;
+        margin: 0 auto;
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+
+    @media screen and (min-width: 31.25em){
+        .article-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+    }
+    
+    @media screen and (min-width: 50em){
+        .article-wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// fwd-student taxonomy page
+.tax-fwd-role {
+    article {
+        max-width: 320px;
+        margin: 0 auto;
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .wp-block-button__link {
+            color: #fff;
+        }
+    }
+
+}
