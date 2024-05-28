@@ -41,4 +41,28 @@
         }
     }
 
+    @media screen and (min-width: 37.5em){
+        article {
+            max-width: 600px;
+        }
+
+        .article-content-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        
+    }
+
+    @media screen and (min-width: 50em){
+        article {
+            max-width: 800px;
+        }
+        .article-content-wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-gap: 1rem;
+        }
+    }
+
 }

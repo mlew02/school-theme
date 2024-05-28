@@ -27,10 +27,7 @@ function displayStudents($role) {
     $query = new WP_Query($args);
     
     if ($query->have_posts()) :
-        ?>
-
-        <?php
-        while ($query->have_posts()) :
+        while ($query->have_posts()) {
             $query->the_post();
             ?>
                 <article>
@@ -38,31 +35,31 @@ function displayStudents($role) {
                         <h2><?php the_title(); ?></h2>
                     </a>
     
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('portrait-student'); ?>
-                    <?php endif; ?>
-    
-                    <?php the_excerpt(); 
+                    <?php 
+                    if (has_post_thumbnail()) {
+                        the_post_thumbnail('portrait-student');  
+                    }
+                    
+                    the_excerpt(); 
 
                     $terms = get_the_terms(get_the_ID(), 'fwd-role');
-                    if ($terms && !is_wp_error($terms)) :
-                        
+
+                    if ($terms && !is_wp_error($terms)) {
                         foreach ($terms as $term) {
                             $role = '<a href="' . get_term_link($term) . '">' . $term->name . '</a>';
                         }
-                       
                         echo "<p>Specialty: $role</p>";
-                    endif;
+                    }
                     ?>
                 </article>
-                <?php
-        endwhile; 
-        ?>
 
-        <?php
+            <?php
+        }
+
         wp_reset_postdata();
-    endif;
-}
+
+        endif;
+    }
 ?>
 
 <main id="primary" class="site-main">
@@ -77,20 +74,20 @@ function displayStudents($role) {
         </header><!-- .page-header -->
 
         <div class="article-wrapper">
-        <?php
-        // get all terms in taxonomy fwd-role
-        $terms = get_terms(array(
-            'taxonomy' => 'fwd-role',
-            'hide_empty' => false
-        ));
+            <?php
+            // get all terms in taxonomy fwd-role
+            $terms = get_terms(array(
+                'taxonomy' => 'fwd-role',
+                'hide_empty' => false
+            ));
 
-        // loop through all terms
-        if (!empty($terms) && !is_wp_error($terms)) {
-            foreach ($terms as $term) {
-                displayStudents($term->slug);
+            // loop through all terms if we have them
+            if (!empty($terms) && !is_wp_error($terms)) {
+                foreach ($terms as $term) {
+                    displayStudents($term->slug);
+                }
             }
-        }
-        ?>
+            ?>
         </div>
 
         <!-- Display navigation to next/previous set of posts -->
@@ -109,4 +106,4 @@ function displayStudents($role) {
 
 <?php
 get_footer();
-?>
+

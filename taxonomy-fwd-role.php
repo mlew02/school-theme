@@ -29,14 +29,19 @@ get_header();
 				the_post();
             ?>
                 <article>
-                    <a href="<?php the_permalink(); ?>">
-                        <h2><?php the_title(); ?></h2>
+					<a href="<?php the_permalink(); ?>">
+						<h2><?php the_title(); ?></h2>
 					</a>
-
-					<?php 
-					the_post_thumbnail('portrait-student');
-					the_content(); 
-					?>
+					
+					<div class="article-content-wrapper">
+						<div>
+							<?php the_post_thumbnail('portrait-student');  ?>
+						</div>
+	
+						<?php
+						the_content(); 
+						?>
+					</div>
                     
                 </article>
             <?php
