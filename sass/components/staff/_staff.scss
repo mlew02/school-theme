@@ -1,0 +1,54 @@
+.entry-content{
+    margin: 0 auto;
+
+   p{
+    font-size: 1.3rem;
+   }
+   h2{
+    text-decoration: underline;
+    font-size: 2rem;
+    margin: 0rem;
+   }
+   h3{
+    font-size: 1.5rem;
+   }
+   a:visited{
+    color: #003c71;
+   }
+}
+@media screen and (min-width: 50em) {
+    .site{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .entry-content {
+      max-width: 800px; 
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; 
+    }
+  
+    .entry-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .entry-content h2 {
+      font-size: 2rem;
+      display: block;
+      width: 100%;
+    }
+  
+    .entry-content h3 {
+      font-size: 1.5rem;
+    }
+  
+    .entry-content p {
+      font-size: 1.3rem;
+    }
+  
+    .entry-content .staff {
+      width: 48%; 
+     
+    }
+  }

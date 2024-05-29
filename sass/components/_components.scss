@@ -17,6 +17,15 @@
 /* Posts and pages
 --------------------------------------------- */
 @import "content/posts-and-pages";
+/* schedule
+--------------------------------------------- */
+@import "schedule/schedule";
+/* Staff
+--------------------------------------------- */
+@import "staff/staff";
+
+//blog
+@import "blog/blog";
 
 /* Comments
 --------------------------------------------- */
@@ -37,4 +46,5 @@
 /* Galleries
 --------------------------------------------- */
 @import "media/galleries";
+
 

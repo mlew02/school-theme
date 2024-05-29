@@ -1,0 +1,66 @@
+  .sch-head h2{
+   font-size: 1rem;
+   text-align: center;
+}
+
+
+.schedule{
+    .schedule th, td, tr{
+        display: block;
+    }
+     .names {
+        display: inline-grid;
+        align-items: start;
+        justify-items: start;
+       
+    }
+    .schedule table {
+        width: 100%; 
+    }
+    .schedule tr{
+        display: block;
+        padding: 1rem;
+    }
+     tr:nth-child(odd) {
+        background-color: #c0bebe; 
+        width: 100%;
+        padding: 1rem;
+    }
+    tr:nth-child(even){
+        padding: 1rem;
+        width: 100%;
+    }
+   .entry-content p {
+    font-size: 1rem;
+   }
+   h2.sch-head{
+    font-size: 1rem;
+    text-align: center;
+   }
+   p{
+    font-size: 1rem;
+   }
+}
+
+
+@media screen and (min-width: 50em) {
+    .schedule{
+        .schedule th,td,tr{
+            display: inline-table;
+            width: 33.33%;
+            padding: 1rem;
+           
+        }
+        .names{
+            display: inline-table;
+            
+        }
+       
+        h2.sch-head{
+            text-align: center;
+        }
+        p{
+            font-size: 1.3rem;
+        }
+    }
+  }

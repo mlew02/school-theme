@@ -43,13 +43,11 @@ get_header();
 				while ($faculty_query->have_posts()):
 					$faculty_query->the_post();
 					?>
-					<div class="staff-member">
+					<div class="staff">
 						<h3><?php the_title(); ?></h3>
 						<div class="staff-content">
 							<?php the_content(); ?>
-							<?php
-							// Add any additional fields or content here
-							?>
+						
 						</div>
 					</div>
 					<?php
@@ -77,7 +75,7 @@ get_header();
 				while ($admin_query->have_posts()):
 					$admin_query->the_post();
 					?>
-					<div class="staff-member">
+					<div class="staff">
 						<h3><?php the_title(); ?></h3>
 						<div class="staff-content">
 							<?php the_content(); ?>
