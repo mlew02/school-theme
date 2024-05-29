@@ -94,7 +94,6 @@ get_header();
 	</article><!-- #post-<?php the_ID(); ?> -->
 
 </main><!-- #primary -->
-</div
 <?php
 
 get_footer();
