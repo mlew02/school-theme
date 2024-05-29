@@ -1,0 +1,28 @@
+.page-id-16 {
+    .site {
+        display: grid;
+        grid-template-columns: 1fr 1000px 1fr;
+        grid-template-areas: 
+            "header header header"
+            ". main ."
+            "footer footer footer";
+        margin: 0 auto;
+        header {
+            grid-area: header;
+        }
+    
+        main {
+            grid-area: main;
+        }
+
+        .recent-news-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+        }
+    
+        footer {
+            grid-area: footer;
+        }
+    }
+}
