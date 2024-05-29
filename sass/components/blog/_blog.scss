@@ -1,0 +1,23 @@
+@media screen and (min-width: 50em) {
+    .news-container{
+        img{
+            width: 1920px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        a:visited{
+            color: #003c71;
+        }
+        
+        h3{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+        .post-meta p {
+            font-size: 1.5rem;
+        }
+    }
+   
+  }
