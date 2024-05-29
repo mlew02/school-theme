@@ -45,6 +45,17 @@ function school_register_custom_post_types() {
         'menu_position' => 5,
         'menu_icon' => 'dashicons-archive',
         'supports' => array('title', 'thumbnail', 'editor'),
+        'template'           => array(
+            array( 'core/paragraph', array(
+                'placeholder' => 'Write a short biography...',
+            ) ),
+            array( 'core/button', array(
+                'placeholder' => 'Link to portfolio',
+                'text' => 'View Portfolio',
+                'url' => ''
+            ) ),
+        ),
+        'template_lock' => 'all', // Prevents adding, removing, or moving blocks
     );
     
     register_post_type('fwd-student', $args);

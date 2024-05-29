@@ -250,3 +250,17 @@ function fwd_excerpt_more( $more ) {
 }
 
 add_filter( 'excerpt_more', 'fwd_excerpt_more' );
+
+// change placeholder text in title of students page from add title to add student name
+function fwd_change_title_text( $title ) {
+	$screen = get_current_screen();
+
+	if ( 'fwd-student' == $screen->post_type ) {
+		$title = 'Add student name';
+	}
+	
+	return $title;
+}
+
+add_filter( 'enter_title_here', 'fwd_change_title_text' );
+
