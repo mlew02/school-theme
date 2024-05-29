@@ -226,3 +226,41 @@ function fwd_post_filter( $use_block_editor, $post ) {
 }
 add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
 add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+// Change the excerpt length only on the student list template to 25, else use the default of 55
+function fwd_custom_excerpt_length( $length ) {
+	if ( is_post_type_archive( 'fwd-student' ) ) {
+		$length = 25;
+		return $length;
+	}
+}
+
+add_filter( 'excerpt_length', 'fwd_custom_excerpt_length', 999 );
+
+// Change the default […] ending only on the student list template to clickable text that links to the single student’s page. For example: “Read More about the Student”.
+
+function fwd_excerpt_more( $more ) {
+	if ( is_post_type_archive( 'fwd-student' ) ) {
+		$more = sprintf( '<br><a class="read-more" href="%1$s">%2$s</a>',
+			get_permalink( get_the_ID() ),
+			__( 'Read More about the Student', 'textdomain' )
+		);
+		return $more;
+	}
+}
+
+add_filter( 'excerpt_more', 'fwd_excerpt_more' );
+
+// change placeholder text in title of students page from add title to add student name
+function fwd_change_title_text( $title ) {
+	$screen = get_current_screen();
+
+	if ( 'fwd-student' == $screen->post_type ) {
+		$title = 'Add student name';
+	}
+	
+	return $title;
+}
+
+add_filter( 'enter_title_here', 'fwd_change_title_text' );
+

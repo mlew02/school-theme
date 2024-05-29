@@ -3,7 +3,11 @@ body {
 }
 
 .site {
-    display: flex;
-    flex-direction: column;
+    max-width: 2200px;
+}
+
+.site-main {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 

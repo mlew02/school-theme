@@ -1,0 +1,102 @@
+// fwd-student archive page
+.post-type-archive-fwd-student {
+    article {
+        max-width: 320px;
+        margin: 0 auto;
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    @media screen and (min-width: 31.25em){
+        .article-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+    }
+    
+    @media screen and (min-width: 50em){
+        .article-wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+// fwd-student taxonomy page
+.tax-fwd-role {
+    article {
+        max-width: 320px;
+        margin: 0 auto;
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .wp-block-button__link {
+            color: #fff;
+        }
+    }
+
+    @media screen and (min-width: 37.5em){
+        article {
+            max-width: 600px;
+        }
+
+        .article-content-wrapper {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        
+    }
+
+    @media screen and (min-width: 50em){
+        article {
+            max-width: 800px;
+        }
+        .article-content-wrapper {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            grid-gap: 1rem;
+        }
+    }
+
+}
+
+// single fwd-student page
+.single-fwd-student {
+    .site-main {
+        padding: 0 2rem 1rem;
+        max-width: 800px;
+        a {
+            &:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .related-students {
+        a {
+            color: #305B9E;
+            text-decoration: none;
+            font-weight: bold;
+            &:hover {
+                color: #305B9E;
+            }
+        }
+    }
+
+}

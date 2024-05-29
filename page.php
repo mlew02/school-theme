@@ -23,10 +23,30 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+		$args = array(
+            'post-type' => 'fwd-student',
+            'posts_per_page' => -1,
+        );
+
+        $query = new WP_Query($args);
+
+        if ($query->have_posts()) {
+            ?>
+            <div>
+            <h2>Students</h2>
+            <?php
+            while ($query->have_posts()) {
+                $query->the_post();
+                
+                the_content();
+            }
+            wp_reset_postdata();
+            ?>
+            </div>
+            <?php
+        }
+
+
 
 		endwhile; // End of the loop.
 		?>
