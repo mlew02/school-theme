@@ -1,0 +1,47 @@
+.schedule{
+    .schedule th, td, tr{
+        display: block;
+    }
+    .schedule th,
+    .schedule td,
+    .schedule tr {
+        display: inline-block; 
+    }
+    .schedule table {
+        width: 100%;
+    }
+    tr:nth-child(odd) {
+        background-color: #a8a6a6;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    tr:nth-child(even) {
+        padding: 1rem;
+    }
+    .name{
+        display: inline-grid;
+        justify-content: start;
+        justify-items: start;
+    }
+    h2{
+        font-size: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 50em) {
+    .schedule{
+        .schedule th,td,tr{
+            display: inline-table;
+            width: 33.33%;
+            padding: 1rem;
+           
+        }
+        .name{
+            display: inline-table;
+            width: 35%;
+        }
+      
+    }
+  }
