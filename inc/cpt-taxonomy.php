@@ -95,7 +95,7 @@ $staff_args = array(
     'hierarchical' => false,
     'menu_position' => 7,
     'menu_icon' => 'dashicons-groups',
-    'supports' => array('title', 'editor', 'thumbnail'),
+    'supports' => array('title'),
     'template' => array(array('core/image'), array('core/paragraph')),
 );
 

@@ -15,7 +15,7 @@ get_header();
             $schedule = get_field('schedule');
             if ($schedule) :
     ?>
-                <h2 class="sch-head" style="text-align:center;s">Weekly Course Schedule</h2>
+                <h2 class="sch-head" style="text-align:center">Weekly Course Schedule</h2>
                 <div class="schedule">
                     <table>
                         <tr class="names">
