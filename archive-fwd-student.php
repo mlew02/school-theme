@@ -9,6 +9,7 @@
 
 get_header();
 
+// creating reusable function to display students
 function displayStudents($role) {
     $args = array(
         'post_type' => 'fwd-student',

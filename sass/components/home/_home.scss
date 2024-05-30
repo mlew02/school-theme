@@ -1,4 +1,5 @@
 .page-id-16 {
+
     .site {
         display: grid;
         grid-template-columns: 1fr 1000px 1fr;
@@ -19,6 +20,10 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             justify-items: center;
+            a, a:visited {
+                color: #305C9F;
+                text-decoration: none;
+            }
         }
     
         footer {

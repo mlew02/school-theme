@@ -158,12 +158,41 @@ add_action('widgets_init', 'school_theme_widgets_init');
 /**
  * Enqueue scripts and styles.
  */
-function school_theme_scripts()
-{
-	wp_enqueue_style('school-theme-style', get_stylesheet_uri(), array(), _S_VERSION);
-	wp_style_add_data('school-theme-style', 'rtl', 'replace');
+function school_theme_scripts() {
+	wp_enqueue_style(
+		'school-theme-style', 
+		get_stylesheet_uri(), 
+		array(), 
+		_S_VERSION
+	);
 
-	wp_enqueue_script('school-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+	wp_style_add_data(
+		'school-theme-style', 
+		'rtl', 
+		'replace'
+	);
+
+	wp_enqueue_script(
+		'school-theme-navigation', 
+		get_template_directory_uri() . '/js/navigation.js', 
+		array(),
+		_S_VERSION, 
+		true
+	);
+
+	wp_enqueue_style(
+		// unique handle
+		'school-fonts',
+
+		// url
+		'https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap',
+
+		// dependencies
+		array(),
+
+		// version
+		null
+	);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
@@ -264,3 +293,15 @@ function fwd_change_title_text( $title ) {
 
 add_filter( 'enter_title_here', 'fwd_change_title_text' );
 
+// change placeholder text of add title to add staff name when adding a new staff post
+function fwd_change_staff_title_text( $title ) {
+	$screen = get_current_screen();
+
+	if ( 'fwd-staff' == $screen->post_type ) {
+		$title = 'Add staff name';
+	}
+	
+	return $title;
+}
+
+add_filter( 'enter_title_here', 'fwd_change_staff_title_text' );

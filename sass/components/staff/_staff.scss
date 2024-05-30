@@ -1,54 +1,49 @@
-.entry-content{
-  margin: 0 auto;
-
- p{
-  font-size: 1.3rem;
- }
- h2{
-  text-decoration: underline;
-  font-size: 2rem;
-  margin: 0rem;
- }
- h3{
-  font-size: 1.5rem;
- }
- a:visited{
-  color: #003c71;
- }
-}
-@media screen and (min-width: 50em) {
-  .site{
-      // max-width: 800px;
-      // margin: 0 auto;
+.page-id-22 {
+  .site-main {
+    max-width: 800px;
   }
-  .entry-content {
-    max-width: 800px; 
+  .staff-container{
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; 
-  }
-
-  .entry-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .entry-content h2 {
-    font-size: 2rem;
-    display: block;
-    width: 100%;
-  }
-
-  .entry-content h3 {
-    font-size: 1.5rem;
-  }
-
-  .entry-content p {
+  
+   p{
     font-size: 1.3rem;
+   }
+   h2{
+    text-decoration: underline;
+    font-size: 2rem;
+    margin: 0rem;
+   }
+   h3{
+    font-size: 1.5rem;
+   }
+   a, a:visited{
+    color: #003c71;
+   }
   }
-
-  .entry-content .staff {
-    width: 48%; 
-   
+  
+  @media screen and (min-width: 50em) {
+    .staff-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; 
+    }
+  
+    .staff-container h2 {
+      font-size: 2rem;
+      width: 100%;
+    }
+  
+    .staff-container h3 {
+      font-size: 1.5rem;
+    }
+  
+    .staff-container p {
+      font-size: 1.3rem;
+    }
+  
+    .staff-container .staff-post {
+      width: 45%; 
+     
+    }
   }
 }
